@@ -74,7 +74,7 @@ class EloquentUserProvider implements UserProvider
     public function updateRememberToken(UserContract $user, $token)
     {
         $user->setRememberToken($token);
-
+        // Important!!! fixes E11000 duplicate key error  
         $user->update();
     }
 
